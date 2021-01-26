@@ -1,5 +1,6 @@
 name: Validate Python e2e
-on: 
+on:
+  workflow_dispatch:
   push:
     branches:
       - main

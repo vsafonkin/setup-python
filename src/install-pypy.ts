@@ -30,7 +30,6 @@ export async function installPyPy(
     throw new Error('No release was found in PyPy version.json');
   }
 
-  core.info("DEBUG: find release")
   const releaseData = findRelease(
     releases,
     pythonVersion,
@@ -47,7 +46,7 @@ export async function installPyPy(
   const {foundAsset, resolvedPythonVersion, resolvedPyPyVersion} = releaseData;
   let downloadUrl = `${foundAsset.download_url}`;
 
-  core.info(`Downloadinggggg PyPy from "${downloadUrl}" ...`);
+  core.info(`Downloading PyPy from "${downloadUrl}" ...`);
   const pypyPath = await tc.downloadTool(downloadUrl);
 
   core.info('Extracting downloaded archive...');

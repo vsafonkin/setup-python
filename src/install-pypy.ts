@@ -47,7 +47,7 @@ export async function installPyPy(
   const {foundAsset, resolvedPythonVersion, resolvedPyPyVersion} = releaseData;
   let downloadUrl = `${foundAsset.download_url}`;
 
-  core.info(`Downloading PyPy from "${downloadUrl}" ...`);
+  core.info(`Downloadinggggg PyPy from "${downloadUrl}" ...`);
   const pypyPath = await tc.downloadTool(downloadUrl);
 
   core.info('Extracting downloaded archive...');

@@ -208,6 +208,7 @@ export function pypyVersionToSemantic(versionSpec: string) {
 
 export function isArchPresentForWindows(item: any) {
   core.info("DEBUG: RUN IS ARCHPRESENT FUNC");
+  core.info(`DEBUG:  ${item.pypy_version}, ${item.python_version}`);
   return item.files.some(
     (file: any) =>
       WINDOWS_ARCHS.includes(file.arch) &&

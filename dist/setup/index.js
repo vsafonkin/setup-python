@@ -66568,8 +66568,10 @@ exports.pypyVersionToSemantic = pypyVersionToSemantic;
 function isArchPresentForWindows(item) {
     core.info("DEBUG: RUN IS ARCHPRESENT FUNC");
     core.info(`DEBUG:  ${item.pypy_version}, ${item.python_version}`);
-    return item.files.some((file) => utils_1.WINDOWS_ARCHS.includes(file.arch) &&
+    const res = item.files.some((file) => utils_1.WINDOWS_ARCHS.includes(file.arch) &&
         utils_1.WINDOWS_PLATFORMS.includes(file.platform));
+    core.info(`RES: ${res}`);
+    return res;
 }
 exports.isArchPresentForWindows = isArchPresentForWindows;
 function isArchPresentForMacOrLinux(item, architecture, platform) {

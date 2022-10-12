@@ -15,6 +15,7 @@ import {
   isNightlyKeyword,
   writeExactPyPyVersionFile
 } from './utils';
+import { resourceLimits } from 'worker_threads';
 
 export async function installPyPy(
   pypyVersion: string,
@@ -209,11 +210,13 @@ export function pypyVersionToSemantic(versionSpec: string) {
 export function isArchPresentForWindows(item: any) {
   core.info("DEBUG: RUN IS ARCHPRESENT FUNC");
   core.info(`DEBUG:  ${item.pypy_version}, ${item.python_version}`);
-  return item.files.some(
+  const res = item.files.some(
     (file: any) =>
       WINDOWS_ARCHS.includes(file.arch) &&
       WINDOWS_PLATFORMS.includes(file.platform)
   );
+  core.info(`RES: ${res}`)
+  return res;
 }
 
 export function isArchPresentForMacOrLinux(

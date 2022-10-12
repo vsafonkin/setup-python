@@ -144,6 +144,7 @@ export function findRelease(
   pypyVersion: string,
   architecture: string
 ) {
+  console.log("DEBUG: find release");
   const filterReleases = releases.filter(item => {
     const isPythonVersionSatisfied = semver.satisfies(
       semver.coerce(item.python_version)!,

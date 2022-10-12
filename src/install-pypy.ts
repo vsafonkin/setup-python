@@ -30,6 +30,7 @@ export async function installPyPy(
     throw new Error('No release was found in PyPy version.json');
   }
 
+  core.info("DEBUG: find release")
   const releaseData = findRelease(
     releases,
     pythonVersion,

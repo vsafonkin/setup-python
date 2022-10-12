@@ -144,7 +144,7 @@ export function findRelease(
   pypyVersion: string,
   architecture: string
 ) {
-  console.log("DEBUG: find release");
+  core.info("DEBUG: find release");
   const filterReleases = releases.filter(item => {
     const isPythonVersionSatisfied = semver.satisfies(
       semver.coerce(item.python_version)!,
@@ -207,7 +207,7 @@ export function pypyVersionToSemantic(versionSpec: string) {
 }
 
 export function isArchPresentForWindows(item: any) {
-  console.log("DEBUG: RUN IS ARCHPRESENT FUNC");
+  core.info("DEBUG: RUN IS ARCHPRESENT FUNC");
   return item.files.some(
     (file: any) =>
       WINDOWS_ARCHS.includes(file.arch) &&
